@@ -22,8 +22,7 @@ namespace FPS
 
             Vector3 finalPos = Transform.position + Transform.forward * speed * Time.fixedDeltaTime;
 
-            RaycastHit hit;
-            if (Physics.Linecast(Transform.position, finalPos, out hit))
+            if (Physics.Linecast(Transform.position, finalPos, out RaycastHit hit))
             {
                 isHitted = true;
                 Transform.position = hit.point;

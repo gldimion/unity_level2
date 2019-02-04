@@ -7,6 +7,7 @@ namespace FPS
     public abstract class BaseWeapon : BaseSceneObject
     {
         public BaseAmmo bulletPrefab;
+        public Animator shootAnimator;
         public float ShootForce;
         public float ReloadTime;
         public float Timeout;
@@ -19,6 +20,7 @@ namespace FPS
             lastShotTime = Time.time;
 
             FireAction();
+            if (shootAnimator != null) shootAnimator.SetTrigger("ShootAction");
         }
 
         protected abstract void FireAction();

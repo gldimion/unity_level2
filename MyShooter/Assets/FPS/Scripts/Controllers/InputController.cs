@@ -23,6 +23,10 @@ namespace FPS
                 Main.Instance.WeaponsController.SelectWeapon(1);
             if (Input.GetKeyDown(KeyCode.Alpha3))
                 Main.Instance.WeaponsController.SelectWeapon(2);
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+                Main.Instance.WeaponsController.SelectWeapon(3);
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+                Main.Instance.WeaponsController.SelectWeapon(4);
 
             if (Input.GetButton("Fire1"))
                 Main.Instance.WeaponsController.Fire();

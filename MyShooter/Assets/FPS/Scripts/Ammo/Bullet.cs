@@ -6,6 +6,11 @@ namespace FPS
 {
     public class Bullet : BaseAmmo
     {
+        [SerializeField]
+        protected float selfDestroyTimeAfterHit = 0.3f;
+
+        protected float hitDelta = 0f;
+
         private float speed;
         private bool isHitted;
 
@@ -25,12 +30,12 @@ namespace FPS
             if (Physics.Linecast(Transform.position, finalPos, out RaycastHit hit))
             {
                 isHitted = true;
-                Transform.position = hit.point;
+                Transform.position = hit.point - Transform.forward * hitDelta;
 
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null) damageable.ApplyDamage(damage, Transform.forward);
 
-                Destroy(GameObject, 0.3f);
+                Destroy(GameObject, selfDestroyTimeAfterHit);
             }
             else
             {

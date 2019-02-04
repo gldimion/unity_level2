@@ -26,13 +26,27 @@ namespace FPS
             }
         }
 
-        public void ChangeWeapon()
+        public void SelectWeapon(int newWeapon)
         {
+            if (newWeapon == currentWeapon || newWeapon >= weapons.Length || newWeapon < 0) return;
+
             weapons[currentWeapon].IsVisible = false;
-            currentWeapon++;
-            if (currentWeapon >= weapons.Length) currentWeapon = 0;
+            currentWeapon = newWeapon;
             weapons[currentWeapon].IsVisible = true;
         }
+
+        public void NextWeapon()
+        {
+            if (currentWeapon + 1 >= weapons.Length) SelectWeapon(0);
+            else SelectWeapon(currentWeapon + 1);
+        }
+
+        public void PreviousWeapon()
+        {
+            if (currentWeapon - 1 < 0) SelectWeapon(weapons.Length - 1);
+            else SelectWeapon(currentWeapon - 1);
+        }
+
 
         public void Fire()
         {

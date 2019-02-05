@@ -83,5 +83,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfDestroyTime: 3
-  damage: 20
+  damage: 10
   selfDestroyTimeAfterHit: 0.3

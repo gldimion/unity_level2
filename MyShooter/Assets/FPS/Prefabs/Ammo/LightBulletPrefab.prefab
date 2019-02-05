@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfDestroyTime: 8
-  damage: 10
+  damage: 5
   selfDestroyTimeAfterHit: 5
   HaloMultiplier: 0.025
   StartLightRange: 1

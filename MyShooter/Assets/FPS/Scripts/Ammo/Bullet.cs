@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace FPS
 {
     public class Bullet : BaseAmmo
     {
+        public event Action BulletHitted;
+
         [SerializeField]
         protected float selfDestroyTimeAfterHit = 0.3f;
 
@@ -34,6 +37,8 @@ namespace FPS
 
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null) damageable.ApplyDamage(damage, Transform.forward);
+
+                BulletHitted?.Invoke();
 
                 Destroy(GameObject, selfDestroyTimeAfterHit);
             }

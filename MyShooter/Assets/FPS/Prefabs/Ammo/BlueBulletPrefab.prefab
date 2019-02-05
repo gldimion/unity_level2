@@ -86,6 +86,7 @@ MonoBehaviour:
   selfDestroyTime: 3
   damage: 25
   selfDestroyTimeAfterHit: 0.3
+  damageIncOverTime: 0.03
   emitters:
   - {fileID: 1010281888731982405}
   - {fileID: 1010281888731982407}

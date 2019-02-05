@@ -12,10 +12,13 @@ namespace FPS
         [SerializeField]
         protected float selfDestroyTimeAfterHit = 0.3f;
 
-        protected float hitDelta = 0f;
+        [SerializeField]
+        protected float damageChangeOverTime = 0f;
+        private float damageMultiplyer = 1f;
 
         private float speed;
         private bool isHitted;
+        protected float hitDelta = 0f;
 
         public override void Initialize(float force, Transform firepoint)
         {
@@ -36,7 +39,7 @@ namespace FPS
                 Transform.position = hit.point - Transform.forward * hitDelta;
 
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-                if (damageable != null) damageable.ApplyDamage(damage, Transform.forward);
+                if (damageable != null) damageable.ApplyDamage(damage * damageMultiplyer, Transform.forward);
 
                 BulletHitted?.Invoke();
 
@@ -45,6 +48,7 @@ namespace FPS
             else
             {
                 Transform.position = finalPos;
+                damageMultiplyer += damageChangeOverTime;
             }
         }
     }

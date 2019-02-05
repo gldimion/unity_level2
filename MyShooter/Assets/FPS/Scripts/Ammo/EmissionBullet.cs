@@ -15,7 +15,7 @@ namespace FPS
             BulletHitted += OnBulletHitted;
         }
 
-        public void OnBulletHitted()
+        private void OnBulletHitted()
         {
             foreach (ParticleSystem e in emitters)
                 e.Stop();

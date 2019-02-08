@@ -85,3 +85,6 @@ MonoBehaviour:
   selfDestroyTime: 3
   damage: 10
   selfDestroyTimeAfterHit: 0.3
+  damageChangeOverTime: 0
+  poolID: AKMBullet
+  objectsCount: 10

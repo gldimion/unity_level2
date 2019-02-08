@@ -6,7 +6,8 @@ namespace FPS
 { 
     public abstract class BaseWeapon : BaseSceneObject
     {
-        public BaseAmmo bulletPrefab;
+        public string BulletID;
+        //public BaseAmmo bulletPrefab;
         public Animator shootAnimator;
         public float ShootForce;
         public float ReloadTime;

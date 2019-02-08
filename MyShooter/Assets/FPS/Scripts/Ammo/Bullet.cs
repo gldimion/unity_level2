@@ -14,17 +14,31 @@ namespace FPS
 
         [SerializeField]
         protected float damageChangeOverTime = 0f;
-        private float damageMultiplyer = 1f;
+        private float damageMultiplyer;
 
         private float speed;
         private bool isHitted;
         protected float hitDelta = 0f;
 
+        [SerializeField]
+        private string poolID;
+        public override string PoolID => poolID;
+
+        [SerializeField]
+        private int objectsCount = 10;
+        public override int ObjectsCount => objectsCount;
+
         public override void Initialize(float force, Transform firepoint)
         {
+            CancelInvoke();
+
+            isHitted = false;
+            damageMultiplyer = 1f;
             Transform.position = firepoint.position;
             Transform.rotation = firepoint.rotation;
-            speed = force;            
+            speed = force;
+
+            gameObject.SetActive(true);
         }
 
         public void FixedUpdate()
@@ -43,7 +57,8 @@ namespace FPS
 
                 BulletHitted?.Invoke();
 
-                Destroy(GameObject, selfDestroyTimeAfterHit);
+                //Destroy(GameObject, selfDestroyTimeAfterHit);
+                Invoke("Disable", selfDestroyTimeAfterHit);
             }
             else
             {

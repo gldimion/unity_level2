@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace FPS
 {
-    public class BatteryView : MonoBehaviour
+    public class FlashlightChargeView : MonoBehaviour
     {
         private FlashlightModel model;
         private Image fillImage;
@@ -16,17 +16,18 @@ namespace FPS
             model = FindObjectOfType<FlashlightModel>();
             fillImage = GetComponent<Image>();
 
-            model.FlashlightEnergyChanged += OnFlashlightEnergyChanged;
+            model.ChargeAmountChanged += OnChargeAmountChanged;
         }
 
-        private void OnFlashlightEnergyChanged(float fill)
+        private void OnChargeAmountChanged(float amount)
         {
-            fillImage.fillAmount = fill;
+            if (Mathf.Abs(fillImage.fillAmount - amount) < 0.01f) return;
+            fillImage.fillAmount = amount;
         }
 
         private void OnDestoy()
         {
-            if(model) model.FlashlightEnergyChanged -= OnFlashlightEnergyChanged;
+            if(model) model.ChargeAmountChanged -= OnChargeAmountChanged;
         }
     }
 }

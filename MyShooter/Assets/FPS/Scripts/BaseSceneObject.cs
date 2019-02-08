@@ -6,6 +6,16 @@ namespace FPS
 { 
     public class BaseSceneObject : MonoBehaviour
     {
+        protected Transform _transform;
+        public Transform Transform
+        {
+            get
+            {
+                if(!_transform) _transform = transform;
+                return _transform;
+            }
+        }
+
         protected GameObject _gameObject;
         public GameObject GameObject
         {
@@ -105,7 +115,7 @@ namespace FPS
 
         protected virtual void Awake()
         {
-            _gameObject = GetComponent<GameObject>();
+            _gameObject = gameObject;
             Name = name;
             _layer = gameObject.layer;
 

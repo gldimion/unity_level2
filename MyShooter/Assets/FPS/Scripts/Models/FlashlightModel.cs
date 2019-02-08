@@ -8,29 +8,36 @@ namespace FPS
     public class FlashlightModel : MonoBehaviour
     {
         public event Action<bool> FlashlightStateChanged;
-        public event Action<float> FlashlightEnergyChanged;
+        public event Action<float> ChargeAmountChanged;
 
         public bool IsOn { get { return _light.enabled; } }
 
-        private Light _light;
+        public float ChargeUpdateTime = 0.5f;
+        public float RechargeTime = 5f;
+        public float DrainMult = 2f;
 
-        private float maxEnergy;
-        private float curEnergy;
-        private float depleteSpeed;
-        private float chargeSpeed;
+        private float chargeAmount;
+        private Light _light;
 
         private void Awake()
         {
             _light = GetComponent<Light>();
+            chargeAmount = 1f;
+        }
 
-            maxEnergy = 10f;
-            curEnergy = maxEnergy;
-            depleteSpeed = 1f;
-            chargeSpeed = 2f;
+        private void OnEnable()
+        {
+            StartCoroutine(ChangeCharge());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(ChangeCharge());
         }
 
         public void On()
         {
+            if (chargeAmount < 0.3f) return;
             if (!_light) return;
             _light.enabled = true;
 
@@ -45,34 +52,22 @@ namespace FPS
             FlashlightStateChanged?.Invoke(false);
         }
 
-        private void RemoveEnergy(float energy)
+        private IEnumerator ChangeCharge()
         {
-            curEnergy -= energy;
-            if(curEnergy <= 0)
-            {
-                curEnergy = 0f;
-                Off();
+            while(true)
+            { 
+                yield return new WaitForSeconds(ChargeUpdateTime);
+                if (IsOn)
+                {
+                    chargeAmount = Mathf.Clamp01(chargeAmount - 1f / Mathf.Max(0.01f, RechargeTime * DrainMult) * ChargeUpdateTime);
+                    if (chargeAmount <= Mathf.Epsilon) Off();
+                }
+                else
+                {
+                    chargeAmount = Mathf.Clamp01(chargeAmount + 1f / Mathf.Max(0.01f, RechargeTime) * ChargeUpdateTime);
+                }
+                ChargeAmountChanged?.Invoke(chargeAmount);
             }
-
-            FlashlightEnergyChanged?.Invoke(curEnergy/maxEnergy);
         }
-
-        private void AddEnergy(float energy)
-        {
-            if (curEnergy == maxEnergy) return;
-
-            curEnergy += energy;
-            if (curEnergy >= maxEnergy)
-                curEnergy = maxEnergy;
-
-            FlashlightEnergyChanged?.Invoke(curEnergy/maxEnergy);
-        }
-
-        private void Update()
-        {
-            if (IsOn) RemoveEnergy(depleteSpeed * Time.deltaTime);
-            else AddEnergy(chargeSpeed * Time.deltaTime);
-        }
-
     }
 }

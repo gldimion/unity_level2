@@ -25,11 +25,23 @@ namespace FPS
         private void Start()
         {
             hitDelta = 0.1f;
+        }
+
+        public override void Initialize(float force, Transform firepoint)
+        {
             realLight.range = StartLightRange;
             haloLight.range = realLight.range * HaloMultiplier;
 
+            base.Initialize(force, firepoint);
+
             StartCoroutine(ChangeLightRange());
         }
+
+        private void OnDisable()
+        {
+            StopCoroutine(ChangeLightRange());
+        }
+
 
         private IEnumerator ChangeLightRange()
         {

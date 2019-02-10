@@ -30,6 +30,8 @@ namespace FPS
 
             if (Input.GetButton("Fire1"))
                 Main.Instance.WeaponsController.Fire();
+            if (Input.GetButtonDown("TeammateCommand"))
+                Main.Instance.TeammateController.MoveCommand();
         }
     }
 }

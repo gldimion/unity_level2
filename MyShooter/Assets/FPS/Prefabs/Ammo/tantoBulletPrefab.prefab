@@ -16,6 +16,8 @@ MonoBehaviour:
   damage: 40
   selfDestroyTimeAfterHit: 0.5
   damageChangeOverTime: -0.01
+  poolID: TantoBullet
+  objectsCount: 10
 --- !u!1001 &285965499415789016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,7 +27,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 165108, guid: eec7ab8cc735a2843825b6d9377afe57, type: 3}
       propertyPath: m_Name
-      value: tantoBulletPrefab
+      value: TantoBulletPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 428054, guid: eec7ab8cc735a2843825b6d9377afe57, type: 3}
       propertyPath: m_LocalPosition.x

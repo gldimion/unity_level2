@@ -117,6 +117,9 @@ MonoBehaviour:
   selfDestroyTime: 8
   damage: 5
   selfDestroyTimeAfterHit: 5
+  damageChangeOverTime: 0
+  poolID: LightBullet
+  objectsCount: 20
   HaloMultiplier: 0.025
   StartLightRange: 1
   MaxLightRange: 15

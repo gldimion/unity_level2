@@ -7,8 +7,6 @@ namespace FPS
 {
     public class Bullet : BaseAmmo
     {
-        public event Action BulletHitted;
-
         [SerializeField]
         protected float selfDestroyTimeAfterHit = 0.3f;
 
@@ -41,6 +39,10 @@ namespace FPS
             gameObject.SetActive(true);
         }
 
+        protected virtual void BulletHittedAction()
+        {
+        }
+
         public void FixedUpdate()
         {
             if (isHitted) return;
@@ -55,7 +57,7 @@ namespace FPS
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null) damageable.ApplyDamage(damage * damageMultiplyer, Transform.forward);
 
-                BulletHitted?.Invoke();
+                BulletHittedAction();
 
                 //Destroy(GameObject, selfDestroyTimeAfterHit);
                 Invoke("Disable", selfDestroyTimeAfterHit);

@@ -11,6 +11,8 @@ namespace FPS
         private NavMeshAgent agent;
         private ThirdPersonCharacter character;
 
+        private Queue<Vector3> waypoints = new Queue<Vector3>();
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -23,14 +25,20 @@ namespace FPS
         private void Update()
         {
             if (agent.remainingDistance > agent.stoppingDistance)
+            {
                 character.Move(agent.desiredVelocity, false, false);
+            }
             else
-                character.Move(Vector3.zero, false, false);
+            {
+                if(waypoints.Count > 0) agent?.SetDestination(waypoints.Dequeue());
+                else character.Move(Vector3.zero, false, false);
+            }
         }
 
         public void SetDestination(Vector3 pos)
         {
-            agent?.SetDestination(pos);
+            waypoints.Enqueue(pos);
+            //agent?.SetDestination(pos);
         }
     }
 }

@@ -15,6 +15,12 @@ namespace FPS
 
         protected float lastShotTime;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            IsVisible = false;
+        }
+
         public virtual void Fire()
         {
             if (Time.time - lastShotTime < Timeout) return;

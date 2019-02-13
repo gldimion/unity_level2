@@ -16,6 +16,7 @@ namespace FPS
         public FlashlightController FlashlightController { get; private set; }
         public WeaponsController WeaponsController { get; private set; }
         public TeammateController TeammateController { get; private set; }
+        public EnemyBotsController EnemyBotsController { get; private set; }
 
         private void Awake()
         {
@@ -29,6 +30,7 @@ namespace FPS
             FlashlightController = gameObject.AddComponent<FlashlightController>();
             WeaponsController = gameObject.AddComponent<WeaponsController>();
             TeammateController = gameObject.AddComponent<TeammateController>();
+            EnemyBotsController = gameObject.AddComponent<EnemyBotsController>();
         }
 
         public void SetPlayer(PlayerModel player)

@@ -653,6 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EyesTransform: {fileID: 7895178228006424081}
+  rangeWeapon: {fileID: 2325193477411262377}
+  meleeWeapon: {fileID: 5271603012824643555}
   currentHealth: 100
 --- !u!195 &8268371265299977946
 NavMeshAgent:

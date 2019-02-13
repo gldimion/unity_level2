@@ -25,7 +25,10 @@ namespace FPS
         private NavMeshAgent agent;
         private Vector3 randomPos;
         private Transform targetTransform;
+
+        [SerializeField]
         private BaseWeapon rangeWeapon;
+        [SerializeField]
         private BaseWeapon meleeWeapon;
 
 
@@ -41,8 +44,6 @@ namespace FPS
 
             agent = GetComponent<NavMeshAgent>();
 
-            rangeWeapon = transform.Find("RangeWeapon").GetComponent<BaseWeapon>();            
-            meleeWeapon = transform.Find("MeleeWeapon").GetComponent<BaseWeapon>();
             rangeWeapon.IsVisible = true;
 
             Main.Instance.EnemyBotsController.AddBot(this);

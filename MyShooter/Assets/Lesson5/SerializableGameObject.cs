@@ -8,4 +8,6 @@ public class SerializableGameObject
     public Vector3 Pos;
     public Vector3 Scale;
     public Quaternion Rot;
+    public bool hasRigidbody;
+    public float mass;
 }

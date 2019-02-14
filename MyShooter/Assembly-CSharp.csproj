@@ -111,6 +111,7 @@
     <Compile Include="Assets\Weapons\Flare Gun\Scripts\swayc.cs" />
     <Compile Include="Assets\Weapons\SciFiHandGun\Scripts\OrbitAroundTarget.cs" />
     <None Include="Assets\LevelData.xml" />
+    <None Include="Assets\LevelDataRB.xml" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>D:/Unity Projects/unity_level2/MyShooter/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>

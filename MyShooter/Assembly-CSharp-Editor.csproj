@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Lesson5\Editor\Lesson5_3.cs" />
     <Compile Include="Assets\Lesson5\Editor\Lesson5_4Editor.cs" />
+    <Compile Include="Assets\Lesson5\Editor\Lesson5HW.cs" />
     <Compile Include="Assets\Lesson5\Editor\MyWindow.cs" />
     <Compile Include="Assets\Lesson5\Editor\SaveLoadObjects.cs" />
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">

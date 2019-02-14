@@ -5,7 +5,7 @@ using UnityEditor;
 
 public static class SaveLoadObjects
 {
-    [MenuItem("Geekbrains/Save Level Objects")]
+    [MenuItem("Geekbrains/Save Level Objects", false, 0)]
     private static void SaveObjects()
     {
         string path = EditorUtility.SaveFilePanel("Select file", Application.dataPath, "LevelData", "xml");
@@ -15,19 +15,22 @@ public static class SaveLoadObjects
 
         foreach (var o in objs)
         {
+            var rb = o.GetComponent<Rigidbody>();
             objsList.Add(new SerializableGameObject
             {
                 PrefabName = o.name,
                 Pos = o.transform.position,
                 Rot = o.transform.rotation,
-                Scale = o.transform.localScale
+                Scale = o.transform.localScale,
+                hasRigidbody = rb != null,
+                mass = rb ? rb.mass : 0
             });
         }
 
         MyXMLSerializer.Save(objsList.ToArray(), path);
     }
 
-    [MenuItem("Geekbrains/Load Level Objects")]
+    [MenuItem("Geekbrains/Load Level Objects", false, 0)]
     private static void LoadObjects()
     {
         string path = EditorUtility.OpenFilePanel("Select file", Application.dataPath, "xml");
@@ -40,6 +43,11 @@ public static class SaveLoadObjects
             var tempObj = Object.Instantiate(prefab, o.Pos, o.Rot);
             tempObj.transform.localScale = o.Scale;
             tempObj.name = o.PrefabName;
+            if (o.hasRigidbody)
+            {
+                var rb = tempObj.AddComponent<Rigidbody>();
+                rb.mass = o.mass;
+            }
         }
     }
 }

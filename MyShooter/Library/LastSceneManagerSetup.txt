@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FPS/Scenes/FPSScene.unity
+- path: Assets/Lesson5/Lesson5p2.unity
   isLoaded: 1
   isActive: 1

@@ -87,6 +87,8 @@
     <Compile Include="Assets\FPS\Scripts\ObjectsPool.cs" />
     <Compile Include="Assets\FPS\Scripts\Radar\MakeRadarObject.cs" />
     <Compile Include="Assets\FPS\Scripts\Radar\Radar.cs" />
+    <Compile Include="Assets\FPS\Scripts\Resources\EnemyData.cs" />
+    <Compile Include="Assets\FPS\Scripts\Resources\LoadResources.cs" />
     <Compile Include="Assets\FPS\Scripts\Views\FlashlightChargeView.cs" />
     <Compile Include="Assets\FPS\Scripts\Views\FlashlightView.cs" />
     <Compile Include="Assets\FPS\Scripts\Views\TeammateView.cs" />

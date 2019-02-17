@@ -97,6 +97,14 @@
     <Compile Include="Assets\Lesson5\Lesson5_4.cs" />
     <Compile Include="Assets\Lesson5\MyXMLSerializer.cs" />
     <Compile Include="Assets\Lesson5\SerializableGameObject.cs" />
+    <Compile Include="Assets\Lesson6\DataManager.cs" />
+    <Compile Include="Assets\Lesson6\DataTest.cs" />
+    <Compile Include="Assets\Lesson6\Interface\IDataProvider.cs" />
+    <Compile Include="Assets\Lesson6\JsonData.cs" />
+    <Compile Include="Assets\Lesson6\PlayerData.cs" />
+    <Compile Include="Assets\Lesson6\PlayerPrefsData.cs" />
+    <Compile Include="Assets\Lesson6\StreamData.cs" />
+    <Compile Include="Assets\Lesson6\XMLData.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -110,8 +118,8 @@
     <Compile Include="Assets\Weapons\Flare Gun\Scripts\flareround.cs" />
     <Compile Include="Assets\Weapons\Flare Gun\Scripts\swayc.cs" />
     <Compile Include="Assets\Weapons\SciFiHandGun\Scripts\OrbitAroundTarget.cs" />
-    <None Include="Assets\LevelData.xml" />
-    <None Include="Assets\LevelDataRB.xml" />
+    <None Include="Assets\Lesson5\LevelData.xml" />
+    <None Include="Assets\Lesson5\LevelDataRB.xml" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>D:/Unity Projects/unity_level2/MyShooter/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>

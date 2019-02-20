@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FPS\Scripts\Resources\Editor\SaveResources.cs" />
     <Compile Include="Assets\Lesson5\Editor\Lesson5_3.cs" />
     <Compile Include="Assets\Lesson5\Editor\Lesson5_4Editor.cs" />
     <Compile Include="Assets\Lesson5\Editor\Lesson5HW.cs" />

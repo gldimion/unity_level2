@@ -109,6 +109,7 @@
     <Compile Include="Assets\Lesson6\PlayerPrefsData.cs" />
     <Compile Include="Assets\Lesson6\StreamData.cs" />
     <Compile Include="Assets\Lesson6\XMLData.cs" />
+    <Compile Include="Assets\Lesson7\Lesson7_1.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />

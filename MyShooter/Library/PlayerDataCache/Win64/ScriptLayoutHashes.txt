@@ -1,8 +1,8 @@
 Win64
 PlayerPath?
-D:/Unity Projects/unity_level2/Build/MyShooter.exe
+D:/Unity Projects/unity_level2/MPBuild/MyShooter.exe
 SceneListBegin?
-Assets/FPS/Scenes/FPSScene.unity
+Assets/Multiplayer/MP.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LevelReset
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -245,6 +245,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 301f4da7cc3b301c161d089f9d22efed Unity.ProBuilder.dll:UnityEngine.ProBuilder.Entity
+c0f450aeef10d836bf503db64f76184a Assembly-CSharp.dll:.Bullet
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -292,8 +293,10 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:.OrbitAroundTarget
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 7d3bfa72ab7073e03c27fa9ec61a96b8 Assembly-CSharp.dll:FPS.EnemyCylinder
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LoadResources
 297ef454f37f5fbf930d8dcf368429ca Assembly-CSharp.dll:.flarebullet
 e1cd667fcc7206a65dc6abb7ef62d02a Assembly-CSharp.dll:.swayc
+dbcce0b5b7eb0553b8205676a44b7718 Assembly-CSharp.dll:.PlayerController
 5e869f601eca6873b969dceef87d6303 Assembly-CSharp-firstpass.dll:UnityStandardAssets._2D.PlatformerCharacter2D
 47cd05cf11ce8beb2fd9a1522f58f5ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LoadResources
+9a42a2d6452e1b5dd790623ca3cd96ca Assembly-CSharp.dll:.PlayerHealth

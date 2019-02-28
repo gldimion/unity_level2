@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 1840601298}
   - component: {fileID: 8613910821160287808}
   - component: {fileID: 7817905831098915862}
+  - component: {fileID: 7629685691997220768}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -485,11 +486,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7b929f45b992541b000cc3bd0fe9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 8555949901148314500}
   BulletPrefab: {fileID: 637649823655700383, guid: 2941766ccf0cb0f45a67a7b2e97a8d1c,
     type: 3}
   FirePoint: {fileID: 4421635249191721509}
   MoveSpeed: 1.5
   RotSpeed: 30
+  TowerRotSpeed: 30
 --- !u!114 &6904249582047293125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +593,26 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &7629685691997220768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555949901491419208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 8555949901148314500}
+  m_ChildIndex: 0
+  m_SendInterval: 0.05263158
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!1 &8555949902621326550
 GameObject:
   m_ObjectHideFlags: 0

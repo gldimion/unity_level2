@@ -6,11 +6,13 @@ using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour
 {
+    public Transform Tower;
     public Rigidbody BulletPrefab;
     public Transform FirePoint;
 
     public float MoveSpeed;
     public float RotSpeed;
+    public float TowerRotSpeed;
 
     private void Start()
     {
@@ -37,6 +39,11 @@ public class PlayerController : NetworkBehaviour
         transform.Translate(0, 0, z);
 
         if (Input.GetButtonDown("Fire1")) CmdFire();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            Tower.Rotate(0, -TowerRotSpeed, 0);
+        if (Input.GetKeyDown(KeyCode.E))
+            Tower.Rotate(0, TowerRotSpeed, 0);
     }
 
     [Command]
